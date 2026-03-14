@@ -1,6 +1,20 @@
 const fs = require('fs');
 const path = require('path');
 
+// Find the hashed logo filename
+const assetsDir = path.join(__dirname, 'docs', 'assets');
+let logoFilename = 'logo.png'; // Fallback
+
+if (fs.existsSync(assetsDir)) {
+    const files = fs.readdirSync(assetsDir);
+    const foundLogo = files.find(f => f.startsWith('logo-') && f.endsWith('.png'));
+    if (foundLogo) {
+        logoFilename = foundLogo;
+    }
+}
+
+const logoPath = `./assets/${logoFilename}`;
+
 const tailwindCdn = '<script src="https://cdn.tailwindcss.com"></script>';
 const fontAwesome = '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />';
 
@@ -26,7 +40,7 @@ const header = (activePage) => `
             <div class="flex justify-between items-center h-28">
                 <!-- Logo -->
                 <a href="index.html" class="flex items-center py-2">
-                    <img src="./assets/logo.png" alt="Patel Legal Services Logo" class="h-24 w-auto object-contain" onerror="this.src='https://via.placeholder.com/150x50?text=Patel+Legal+Services'" />
+                    <img src="${logoPath}" alt="Patel Legal Services Logo" class="h-24 w-auto object-contain" />
                 </a>
 
                 <!-- Desktop Nav -->
@@ -67,7 +81,7 @@ const footer = `
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                 <div>
                     <div class="flex items-center mb-6">
-                        <img src="./assets/logo.png" alt="Patel Legal Services Logo" class="h-24 w-auto bg-white rounded p-2 mr-2 object-contain" onerror="this.src='https://via.placeholder.com/150x50?text=Patel+Legal+Services'" />
+                        <img src="${logoPath}" alt="Patel Legal Services Logo" class="h-24 w-auto bg-white rounded p-2 mr-2 object-contain" />
                     </div>
                     <p class="text-sm mb-4">
                         Legal Services providing affordable and effective legal representation for Landlord and Tenant Board and Small Claims Court matters in Ontario.
@@ -399,6 +413,8 @@ const servicesContent = `
                             <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Representation at LTB hearings</span></li>
                             <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Lease agreement review and drafting</span></li>
                             <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Resolving property damage disputes</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Rent increase compliance</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Enforcement of LTB orders</span></li>
                         </ul>
                     </div>
                     <div class="space-y-8">
@@ -410,12 +426,28 @@ const servicesContent = `
                             <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Maintenance and repair disputes</span></li>
                             <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Illegal rent increase challenges</span></li>
                             <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Harassment & interference claims</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Representation at LTB hearings</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Negotiating settlements</span></li>
                         </ul>
                     </div>
                 </div>
-                <div class="bg-slate-900 text-white p-12 rounded-[2.5rem]">
+                <div class="mt-12">
+                    <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center">
+                        <div class="w-2 h-8 bg-slate-900 mr-4 rounded-full"></div> Representation at Hearings
+                    </h2>
+                    <p class="text-slate-600 mb-8 leading-relaxed">
+                        Our firm can represent clients during hearings before the <span class="font-bold text-slate-900">Landlord and Tenant Board</span>, ensuring your case is presented professionally and effectively.
+                    </p>
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span class="text-slate-700">Preparing legal documents</span></div>
+                        <div class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span class="text-slate-700">Gathering evidence</span></div>
+                        <div class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span class="text-slate-700">Presenting arguments</span></div>
+                        <div class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span class="text-slate-700">Negotiating settlements</span></div>
+                    </div>
+                </div>
+                <div class="bg-slate-900 text-white p-12 rounded-[2.5rem] mt-16">
                     <h2 class="text-3xl font-bold mb-6">Get Legal Guidance</h2>
-                    <p class="text-white/80 text-lg mb-10 leading-relaxed">Landlord-tenant disputes can have serious consequences. We provide clear advice and strong advocacy.</p>
+                    <p class="text-white/80 text-lg mb-10 leading-relaxed">Landlord-tenant disputes can have serious financial and housing consequences. Our firm is committed to providing clear advice, strong advocacy, and practical solutions to help resolve your matter effectively.</p>
                     <a href="contact.html" class="inline-block bg-white text-slate-900 px-10 py-4 rounded-xl font-bold hover:bg-slate-100 transition-colors">Schedule a Consultation</a>
                 </div>
             </div>
@@ -434,9 +466,11 @@ const servicesContent = `
                             <div class="w-2 h-8 bg-slate-900 mr-4 rounded-full"></div> Starting a Claim
                         </h2>
                         <ul class="space-y-4">
-                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Plaintiff’s Claim preparation</span></li>
-                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Evidence gathering</span></li>
-                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Serving court documents</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Assessing the strength of your case</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Preparing and filing a Plaintiff’s Claim</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Gathering evidence and supporting documentation</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Serving court documents on the opposing party</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Representing you throughout the court process</span></li>
                         </ul>
                     </div>
                     <div class="space-y-8">
@@ -444,15 +478,32 @@ const servicesContent = `
                             <div class="w-2 h-8 bg-slate-900 mr-4 rounded-full"></div> Defending a Claim
                         </h2>
                         <ul class="space-y-4">
-                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Defence preparation</span></li>
-                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Legal response strategy</span></li>
-                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Settlement negotiations</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Understand your legal options</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Prepare and file a Defence</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Build a strong legal response</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Negotiate settlements where appropriate</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Represent you in court proceedings</span></li>
                         </ul>
                     </div>
                 </div>
-                <div class="bg-slate-900 text-white p-12 rounded-[2.5rem]">
+                <div class="mt-12">
+                    <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center">
+                        <div class="w-2 h-8 bg-slate-900 mr-4 rounded-full"></div> Representation at Court
+                    </h2>
+                    <p class="text-slate-600 mb-8 leading-relaxed">
+                        Our firm can represent clients throughout the Ontario Small Claims Court process, including:
+                    </p>
+                    <div class="grid sm:grid-cols-2 gap-y-3 gap-x-8">
+                        <div class="flex items-center text-slate-700"><i class="fa-solid fa-circle-check text-slate-900 mr-3"></i> Settlement conferences</div>
+                        <div class="flex items-center text-slate-700"><i class="fa-solid fa-circle-check text-slate-900 mr-3"></i> Motions and procedural matters</div>
+                        <div class="flex items-center text-slate-700"><i class="fa-solid fa-circle-check text-slate-900 mr-3"></i> Trial preparation</div>
+                        <div class="flex items-center text-slate-700"><i class="fa-solid fa-circle-check text-slate-900 mr-3"></i> Trial representation</div>
+                        <div class="flex items-center text-slate-700"><i class="fa-solid fa-circle-check text-slate-900 mr-3"></i> Enforcement of court judgments</div>
+                    </div>
+                </div>
+                <div class="bg-slate-900 text-white p-12 rounded-[2.5rem] mt-16">
                     <h2 class="text-3xl font-bold mb-6">Practical Legal Solutions</h2>
-                    <p class="text-white/80 text-lg mb-10 leading-relaxed">We help clients resolve disputes efficiently while protecting their interests.</p>
+                    <p class="text-white/80 text-lg mb-10 leading-relaxed">Small Claims Court matters require clear strategy, careful preparation, and effective advocacy. Our goal is to help clients resolve disputes as efficiently as possible while protecting their legal and financial interests.</p>
                     <a href="contact.html" class="inline-block bg-white text-slate-900 px-10 py-4 rounded-xl font-bold hover:bg-slate-100 transition-colors">Schedule a Consultation</a>
                 </div>
             </div>
@@ -466,21 +517,30 @@ const servicesContent = `
                     <h1 class="text-4xl font-bold text-slate-900 mb-6">Notary Services</h1>
                 </header>
                 <div class="bg-slate-50 p-10 rounded-3xl border border-slate-200">
+                    <div class="mb-12">
+                        <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center">
+                            <div class="w-2 h-8 bg-slate-900 mr-4 rounded-full"></div> Document Authentication
+                        </h2>
+                        <p class="text-slate-600 leading-relaxed">
+                            As a Notary Public, we can verify the authenticity of documents and confirm that copies match the original documents.
+                        </p>
+                    </div>
                     <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center">
                         <div class="w-2 h-8 bg-slate-900 mr-4 rounded-full"></div> What to Bring
                     </h2>
                     <ul class="space-y-4 mb-8">
-                        <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Valid government-issued photo ID</span></li>
-                        <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Original documents requiring notarization</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-user text-slate-900 mr-3 mt-1"></i> <span>A valid government-issued photo ID</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-file-lines text-slate-900 mr-3 mt-1"></i> <span>The original documents requiring notarization</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-building text-slate-900 mr-3 mt-1"></i> <span>Any supporting documents, if applicable</span></li>
                     </ul>
                     <div class="p-6 bg-amber-50 border-l-4 border-amber-400 text-amber-900 rounded-r-xl">
                         <p class="font-bold mb-1">Important Note:</p>
-                        <p class="text-sm">Please do not sign the document in advance as the signature may need to be witnessed.</p>
+                        <p class="text-sm">Please do not sign the document in advance unless instructed to do so, as the signature may need to be witnessed.</p>
                     </div>
                 </div>
-                <div class="bg-slate-900 text-white p-12 rounded-[2.5rem]">
-                    <h2 class="text-3xl font-bold mb-6">Professional Service</h2>
-                    <p class="text-white/80 text-lg mb-10 leading-relaxed">Efficient and professional notary services to meet your time-sensitive needs.</p>
+                <div class="bg-slate-900 text-white p-12 rounded-[2.5rem] mt-16">
+                    <h2 class="text-3xl font-bold mb-6">Convenient and Professional Service</h2>
+                    <p class="text-white/80 text-lg mb-10 leading-relaxed">We understand that notarizing documents is often time-sensitive. Our firm strives to provide efficient and professional notary services to meet your needs. Contact us today to schedule an appointment.</p>
                     <a href="contact.html" class="inline-block bg-white text-slate-900 px-10 py-4 rounded-xl font-bold hover:bg-slate-100 transition-colors">Schedule a Consultation</a>
                 </div>
             </div>
