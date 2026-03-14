@@ -199,7 +199,7 @@ const homeContent = `
                             <li class="flex items-center text-sm text-slate-900"><i class="fa-solid fa-circle-check text-slate-900 mr-2"></i> Rent Arrears & Non-Payment Disputes</li>
                             <li class="flex items-center text-sm text-slate-900"><i class="fa-solid fa-circle-check text-slate-900 mr-2"></i> Tenant Rights Violations</li>
                         </ul>
-                        <a href="services.html#ltb" class="block text-center w-full py-3 border border-slate-200 rounded-md text-slate-900 font-medium hover:bg-slate-900 hover:text-white transition-colors">Learn More</a>
+                        <a href="services.html#ltb" class="block text-center w-full py-3 border border-slate-200 rounded-md text-slate-900 font-medium hover:bg-slate-900 hover:text-white transition-colors">View Full Details</a>
                     </div>
                 </div>
 
@@ -219,7 +219,7 @@ const homeContent = `
                             <li class="flex items-center text-sm text-slate-900"><i class="fa-solid fa-circle-check text-slate-900 mr-2"></i> Debt Recovery</li>
                             <li class="flex items-center text-sm text-slate-900"><i class="fa-solid fa-circle-check text-slate-900 mr-2"></i> Property Damage</li>
                         </ul>
-                        <a href="services.html#small-claims" class="block text-center w-full py-3 border border-slate-200 rounded-md text-slate-900 font-medium hover:bg-slate-900 hover:text-white transition-colors">Learn More</a>
+                        <a href="services.html#small-claims" class="block text-center w-full py-3 border border-slate-200 rounded-md text-slate-900 font-medium hover:bg-slate-900 hover:text-white transition-colors">View Full Details</a>
                     </div>
                 </div>
 
@@ -239,7 +239,7 @@ const homeContent = `
                             <li class="flex items-center text-sm text-slate-900"><i class="fa-solid fa-circle-check text-slate-900 mr-2"></i> Certify True Copies</li>
                             <li class="flex items-center text-sm text-slate-900"><i class="fa-solid fa-circle-check text-slate-900 mr-2"></i> Consent Letters</li>
                         </ul>
-                        <a href="services.html#notary" class="block text-center w-full py-3 border border-slate-200 rounded-md text-slate-900 font-medium hover:bg-slate-900 hover:text-white transition-colors">Learn More</a>
+                        <a href="services.html#notary" class="block text-center w-full py-3 border border-slate-200 rounded-md text-slate-900 font-medium hover:bg-slate-900 hover:text-white transition-colors">View Full Details</a>
                     </div>
                 </div>
             </div>
@@ -330,7 +330,7 @@ const aboutContent = `
 
 const servicesContent = `
     <!-- Page Header -->
-    <div class="bg-slate-900 py-20">
+    <div id="services-header" class="bg-slate-900 py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Our Legal Services</h1>
             <p class="text-xl text-white/70 max-w-2xl mx-auto">Professional, affordable, and effective legal representation tailored to your specific needs in Ontario.</p>
@@ -338,30 +338,157 @@ const servicesContent = `
     </div>
 
     <!-- Service Cards Grid -->
-    <section class="py-20">
+    <section id="services-overview" class="py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-3 gap-8">
-                <div id="ltb" class="group bg-slate-50 p-10 rounded-2xl shadow-sm border border-slate-200 flex flex-col h-full hover:bg-white transition-all duration-300">
+                <div class="group bg-slate-50 p-10 rounded-2xl shadow-sm border border-slate-200 flex flex-col h-full hover:bg-white transition-all duration-300">
                     <div class="text-slate-900 mb-6"><i class="fa-solid fa-building text-5xl"></i></div>
                     <h2 class="text-2xl font-bold text-slate-900 mb-4">Landlord and Tenant Board</h2>
                     <p class="text-slate-600 mb-8 flex-grow leading-relaxed">Expert guidance for both landlords and tenants in all matters before the Landlord and Tenant Board.</p>
+                    <button onclick="showService('ltb')" class="w-full bg-slate-900 hover:bg-slate-800 text-white py-4 rounded-xl font-bold transition-all flex items-center justify-center">
+                        View Full Details <i class="fa-solid fa-chevron-right ml-2"></i>
+                    </button>
                 </div>
-                <div id="small-claims" class="group bg-slate-50 p-10 rounded-2xl shadow-sm border border-slate-200 flex flex-col h-full hover:bg-white transition-all duration-300">
+                <div class="group bg-slate-50 p-10 rounded-2xl shadow-sm border border-slate-200 flex flex-col h-full hover:bg-white transition-all duration-300">
                     <div class="text-slate-900 mb-6"><i class="fa-solid fa-file-lines text-5xl"></i></div>
                     <h2 class="text-2xl font-bold text-slate-900 mb-4">Small Claims Court Matters</h2>
                     <p class="text-slate-600 mb-8 flex-grow leading-relaxed">Legal representation for claims up to $50,000, including contract disputes and debt recovery.</p>
+                    <button onclick="showService('small-claims')" class="w-full bg-slate-900 hover:bg-slate-800 text-white py-4 rounded-xl font-bold transition-all flex items-center justify-center">
+                        View Full Details <i class="fa-solid fa-chevron-right ml-2"></i>
+                    </button>
                 </div>
-                <div id="notary" class="group bg-slate-50 p-10 rounded-2xl shadow-sm border border-slate-200 flex flex-col h-full hover:bg-white transition-all duration-300">
+                <div class="group bg-slate-50 p-10 rounded-2xl shadow-sm border border-slate-200 flex flex-col h-full hover:bg-white transition-all duration-300">
                     <div class="text-slate-900 mb-6"><i class="fa-solid fa-shield-halved text-5xl"></i></div>
                     <h2 class="text-2xl font-bold text-slate-900 mb-4">Notary Services</h2>
                     <p class="text-slate-600 mb-8 flex-grow leading-relaxed">Reliable notary services including affidavits, certified copies, and document authentication.</p>
+                    <button onclick="showService('notary')" class="w-full bg-slate-900 hover:bg-slate-800 text-white py-4 rounded-xl font-bold transition-all flex items-center justify-center">
+                        View Full Details <i class="fa-solid fa-chevron-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Details (Hidden by default) -->
+    <section id="service-details" class="hidden pb-20">
+        <div class="bg-white border-b border-slate-200 sticky top-28 z-40">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center">
+                <button onclick="hideService()" class="flex items-center text-slate-500 hover:text-slate-900 font-medium transition-colors group">
+                    <i class="fa-solid fa-arrow-left mr-2 group-hover:-translate-x-1 transition-transform"></i> Back to Services
+                </button>
+            </div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+            <!-- LTB Details -->
+            <div id="detail-ltb" class="detail-content hidden space-y-16">
+                <header>
+                    <div class="inline-flex p-4 bg-slate-100 rounded-2xl mb-6">
+                        <i class="fa-solid fa-building text-4xl text-slate-900"></i>
+                    </div>
+                    <h1 class="text-4xl font-bold text-slate-900 mb-6">Landlord and Tenant Board</h1>
+                </header>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="space-y-8">
+                        <h2 class="text-2xl font-bold text-slate-900 flex items-center">
+                            <div class="w-2 h-8 bg-slate-900 mr-4 rounded-full"></div> Services for Landlords
+                        </h2>
+                        <ul class="space-y-4">
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Preparing and serving eviction notices</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Applications for non-payment of rent</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Representation at LTB hearings</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Lease agreement review and drafting</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Resolving property damage disputes</span></li>
+                        </ul>
+                    </div>
+                    <div class="space-y-8">
+                        <h2 class="text-2xl font-bold text-slate-900 flex items-center">
+                            <div class="w-2 h-8 bg-slate-900 mr-4 rounded-full"></div> Services for Tenants
+                        </h2>
+                        <ul class="space-y-4">
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Wrongful eviction defense</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Maintenance and repair disputes</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Illegal rent increase challenges</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Harassment & interference claims</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-slate-900 text-white p-12 rounded-[2.5rem]">
+                    <h2 class="text-3xl font-bold mb-6">Get Legal Guidance</h2>
+                    <p class="text-white/80 text-lg mb-10 leading-relaxed">Landlord-tenant disputes can have serious consequences. We provide clear advice and strong advocacy.</p>
+                    <a href="contact.html" class="inline-block bg-white text-slate-900 px-10 py-4 rounded-xl font-bold hover:bg-slate-100 transition-colors">Schedule a Consultation</a>
+                </div>
+            </div>
+
+            <!-- Small Claims Details -->
+            <div id="detail-small-claims" class="detail-content hidden space-y-16">
+                <header>
+                    <div class="inline-flex p-4 bg-slate-100 rounded-2xl mb-6">
+                        <i class="fa-solid fa-file-lines text-4xl text-slate-900"></i>
+                    </div>
+                    <h1 class="text-4xl font-bold text-slate-900 mb-6">Small Claims Court Matters</h1>
+                </header>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="space-y-8">
+                        <h2 class="text-2xl font-bold text-slate-900 flex items-center">
+                            <div class="w-2 h-8 bg-slate-900 mr-4 rounded-full"></div> Starting a Claim
+                        </h2>
+                        <ul class="space-y-4">
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Plaintiff’s Claim preparation</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Evidence gathering</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Serving court documents</span></li>
+                        </ul>
+                    </div>
+                    <div class="space-y-8">
+                        <h2 class="text-2xl font-bold text-slate-900 flex items-center">
+                            <div class="w-2 h-8 bg-slate-900 mr-4 rounded-full"></div> Defending a Claim
+                        </h2>
+                        <ul class="space-y-4">
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Defence preparation</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Legal response strategy</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Settlement negotiations</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-slate-900 text-white p-12 rounded-[2.5rem]">
+                    <h2 class="text-3xl font-bold mb-6">Practical Legal Solutions</h2>
+                    <p class="text-white/80 text-lg mb-10 leading-relaxed">We help clients resolve disputes efficiently while protecting their interests.</p>
+                    <a href="contact.html" class="inline-block bg-white text-slate-900 px-10 py-4 rounded-xl font-bold hover:bg-slate-100 transition-colors">Schedule a Consultation</a>
+                </div>
+            </div>
+
+            <!-- Notary Details -->
+            <div id="detail-notary" class="detail-content hidden space-y-16">
+                <header>
+                    <div class="inline-flex p-4 bg-slate-100 rounded-2xl mb-6">
+                        <i class="fa-solid fa-shield-halved text-4xl text-slate-900"></i>
+                    </div>
+                    <h1 class="text-4xl font-bold text-slate-900 mb-6">Notary Services</h1>
+                </header>
+                <div class="bg-slate-50 p-10 rounded-3xl border border-slate-200">
+                    <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center">
+                        <div class="w-2 h-8 bg-slate-900 mr-4 rounded-full"></div> What to Bring
+                    </h2>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Valid government-issued photo ID</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-circle-check text-slate-900 mr-3 mt-1"></i> <span>Original documents requiring notarization</span></li>
+                    </ul>
+                    <div class="p-6 bg-amber-50 border-l-4 border-amber-400 text-amber-900 rounded-r-xl">
+                        <p class="font-bold mb-1">Important Note:</p>
+                        <p class="text-sm">Please do not sign the document in advance as the signature may need to be witnessed.</p>
+                    </div>
+                </div>
+                <div class="bg-slate-900 text-white p-12 rounded-[2.5rem]">
+                    <h2 class="text-3xl font-bold mb-6">Professional Service</h2>
+                    <p class="text-white/80 text-lg mb-10 leading-relaxed">Efficient and professional notary services to meet your time-sensitive needs.</p>
+                    <a href="contact.html" class="inline-block bg-white text-slate-900 px-10 py-4 rounded-xl font-bold hover:bg-slate-100 transition-colors">Schedule a Consultation</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Why Choose Us -->
-    <section class="py-24 bg-slate-900 text-white">
+    <section id="why-choose-us" class="py-24 bg-slate-900 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-20">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Why Choose Patel Legal Services</h2>
@@ -407,6 +534,37 @@ const servicesContent = `
             </div>
         </div>
     </section>
+
+    <script>
+        function showService(id) {
+            document.getElementById('services-header').classList.add('hidden');
+            document.getElementById('services-overview').classList.add('hidden');
+            document.getElementById('why-choose-us').classList.add('hidden');
+            document.getElementById('service-details').classList.remove('hidden');
+            
+            // Hide all detail contents
+            document.querySelectorAll('.detail-content').forEach(el => el.classList.add('hidden'));
+            // Show selected detail content
+            document.getElementById('detail-' + id).classList.remove('hidden');
+            window.scrollTo(0, 0);
+        }
+
+        function hideService() {
+            document.getElementById('services-header').classList.remove('hidden');
+            document.getElementById('services-overview').classList.remove('hidden');
+            document.getElementById('why-choose-us').classList.remove('hidden');
+            document.getElementById('service-details').classList.add('hidden');
+            window.scrollTo(0, 0);
+        }
+
+        // Handle hash links
+        window.addEventListener('load', () => {
+            const hash = window.location.hash.substring(1);
+            if (hash === 'ltb' || hash === 'small-claims' || hash === 'notary') {
+                showService(hash);
+            }
+        });
+    </script>
 `;
 
 const contactContent = `
