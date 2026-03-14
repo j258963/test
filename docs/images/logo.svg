@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <style>
+      .monogram { font-family: 'Times New Roman', Times, serif; font-size: 180px; fill: #0f205a; }
+      .title { font-family: Arial, sans-serif; font-size: 20px; font-weight: bold; letter-spacing: 4px; fill: #000; }
+      .subtitle { font-family: Arial, sans-serif; font-size: 10px; letter-spacing: 3px; fill: #000; }
+    </style>
+  </defs>
+  
+  <!-- Monogram -->
+  <text x="110" y="240" class="monogram">P</text>
+  <text x="170" y="280" class="monogram">L</text>
+  
+  <!-- Text -->
+  <text x="200" y="320" class="title" text-anchor="middle">PATEL LEGAL SERVICES</text>
+  <text x="200" y="340" class="subtitle" text-anchor="middle">PROFESSIONAL CORPORATION</text>
+</svg>
