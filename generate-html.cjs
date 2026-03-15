@@ -115,7 +115,7 @@ const footer = `
                 </div>
             </div>
             <div class="border-t border-slate-800 pt-8 text-xs text-center text-slate-500">
-                <p class="mb-2">© 2026 Patel Legal Services. All rights reserved.</p>
+                <p class="mb-2">© ${new Date().getFullYear()} Patel Legal Services. All rights reserved.</p>
                 <p>
                     <strong>Disclaimer:</strong> The information provided on this website is for general informational purposes only and does not constitute legal advice. 
                     Visiting this website or contacting Patel Legal Services does not create a paralegal-client relationship. 
@@ -212,6 +212,8 @@ const homeContent = `
                             <li class="flex items-center text-sm text-slate-900"><i class="fa-solid fa-circle-check text-slate-900 mr-2"></i> Eviction Applications</li>
                             <li class="flex items-center text-sm text-slate-900"><i class="fa-solid fa-circle-check text-slate-900 mr-2"></i> Rent Arrears & Non-Payment Disputes</li>
                             <li class="flex items-center text-sm text-slate-900"><i class="fa-solid fa-circle-check text-slate-900 mr-2"></i> Tenant Rights Violations</li>
+                            <li class="flex items-center text-sm text-slate-900"><i class="fa-solid fa-circle-check text-slate-900 mr-2"></i> Maintenance and Repair Disputes</li>
+                            <li class="flex items-center text-sm text-slate-900"><i class="fa-solid fa-circle-check text-slate-900 mr-2"></i> Wrongful Evictions</li>
                         </ul>
                         <a href="services.html#ltb" class="block text-center w-full py-3 border border-slate-200 rounded-md text-slate-900 font-medium hover:bg-slate-900 hover:text-white transition-colors">View Full Details</a>
                     </div>
@@ -227,11 +229,13 @@ const homeContent = `
                         </h3>
                     </div>
                     <div class="p-8 flex-grow flex flex-col">
-                        <p class="text-slate-500 mb-6 flex-grow">Our firm provides legal guidance and representation for matters before the Small Claims Court for claims up to $50,000.</p>
+                        <p class="text-slate-500 mb-6 flex-grow">Our firm provides legal guidance and representation for matters before the Small Claims Court for claims up to $50,000. Whether you are starting a claim or defending one, we work closely with you to develop a strategy that protects your interests and pursue the best possible outcome.</p>
                         <ul class="space-y-2 mb-8">
                             <li class="flex items-center text-sm text-slate-900"><i class="fa-solid fa-circle-check text-slate-900 mr-2"></i> Breach of Contract</li>
                             <li class="flex items-center text-sm text-slate-900"><i class="fa-solid fa-circle-check text-slate-900 mr-2"></i> Debt Recovery</li>
                             <li class="flex items-center text-sm text-slate-900"><i class="fa-solid fa-circle-check text-slate-900 mr-2"></i> Property Damage</li>
+                            <li class="flex items-center text-sm text-slate-900"><i class="fa-solid fa-circle-check text-slate-900 mr-2"></i> Personal Property</li>
+                            <li class="flex items-center text-sm text-slate-900"><i class="fa-solid fa-circle-check text-slate-900 mr-2"></i> Consumer Disputes</li>
                         </ul>
                         <a href="services.html#small-claims" class="block text-center w-full py-3 border border-slate-200 rounded-md text-slate-900 font-medium hover:bg-slate-900 hover:text-white transition-colors">View Full Details</a>
                     </div>
@@ -247,11 +251,11 @@ const homeContent = `
                         </h3>
                     </div>
                     <div class="p-8 flex-grow flex flex-col">
-                        <p class="text-slate-500 mb-6 flex-grow">Our firm provides reliable and efficient notary services to individuals and businesses.</p>
+                        <p class="text-slate-500 mb-6 flex-grow">Our firm provides reliable and efficient notary services to individuals and businesses. As a Notary Public, we are authorized to verify identities, witness signatures, and certify documents to ensure they are legally recognized.</p>
                         <ul class="space-y-2 mb-8">
-                            <li class="flex items-center text-sm text-slate-900"><i class="fa-solid fa-circle-check text-slate-900 mr-2"></i> Affidavits & Declarations</li>
+                            <li class="flex items-center text-sm text-slate-900"><i class="fa-solid fa-circle-check text-slate-900 mr-2"></i> Affidavits and Statutory Declarations</li>
                             <li class="flex items-center text-sm text-slate-900"><i class="fa-solid fa-circle-check text-slate-900 mr-2"></i> Certify True Copies</li>
-                            <li class="flex items-center text-sm text-slate-900"><i class="fa-solid fa-circle-check text-slate-900 mr-2"></i> Consent Letters</li>
+                            <li class="flex items-center text-sm text-slate-900"><i class="fa-solid fa-circle-check text-slate-900 mr-2"></i> Consent Letters for Travel</li>
                         </ul>
                         <a href="services.html#notary" class="block text-center w-full py-3 border border-slate-200 rounded-md text-slate-900 font-medium hover:bg-slate-900 hover:text-white transition-colors">View Full Details</a>
                     </div>
@@ -260,12 +264,60 @@ const homeContent = `
         </div>
     </section>
 
+    <!-- Why Choose Us -->
+    <section class="py-24 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Why Choose Patel Legal Services</h2>
+                <div class="w-24 h-1 bg-white/20 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-8">
+                <div class="text-center">
+                    <div class="bg-slate-800 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-slate-700">
+                        <i class="fa-solid fa-scale-balanced text-2xl text-white"></i>
+                    </div>
+                    <h3 class="font-bold mb-3">Licensed</h3>
+                    <p class="text-white/60 text-sm leading-relaxed">Regulated by the Law Society of Ontario.</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-slate-800 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-slate-700">
+                        <i class="fa-solid fa-briefcase text-2xl text-white"></i>
+                    </div>
+                    <h3 class="font-bold mb-3">Affordable</h3>
+                    <p class="text-white/60 text-sm leading-relaxed">Cost-effective alternative to traditional lawyers.</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-slate-800 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-slate-700">
+                        <i class="fa-solid fa-envelope text-2xl text-white"></i>
+                    </div>
+                    <h3 class="font-bold mb-3">Responsive</h3>
+                    <p class="text-white/60 text-sm leading-relaxed">Clear and consistent communication at every step.</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-slate-800 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-slate-700">
+                        <i class="fa-solid fa-file-lines text-2xl text-white"></i>
+                    </div>
+                    <h3 class="font-bold mb-3">Meticulous</h3>
+                    <p class="text-white/60 text-sm leading-relaxed">Thorough evidence review and precise drafting.</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-slate-800 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-slate-700">
+                        <i class="fa-solid fa-gavel text-2xl text-white"></i>
+                    </div>
+                    <h3 class="font-bold mb-3">Advocacy</h3>
+                    <p class="text-white/60 text-sm leading-relaxed">Strong representation before boards and courts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
-    <section class="py-20 bg-slate-900 text-white text-center">
+    <section class="py-20 bg-slate-50 text-center">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to resolve your legal issue?</h2>
-            <p class="text-xl text-white mb-10">Contact us today to schedule a consultation and discuss how we can help protect your interests.</p>
-            <a href="contact.html" class="inline-block bg-white text-slate-900 hover:bg-slate-50 px-8 py-4 rounded-md font-bold text-lg transition-colors shadow-lg">Contact Us Today</a>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Ready to resolve your legal issue?</h2>
+            <p class="text-xl text-slate-600 mb-10">Contact us today to schedule a consultation and discuss how we can help protect your interests.</p>
+            <a href="contact.html" class="inline-block bg-slate-900 text-white hover:bg-slate-800 px-8 py-4 rounded-md font-bold text-lg transition-colors shadow-lg">Contact Us Today</a>
         </div>
     </section>
 `;
@@ -579,17 +631,17 @@ const servicesContent = `
                 </div>
                 <div class="text-center">
                     <div class="bg-slate-800 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-slate-700">
-                        <i class="fa-solid fa-shield-halved text-2xl text-white"></i>
+                        <i class="fa-solid fa-file-lines text-2xl text-white"></i>
                     </div>
-                    <h3 class="font-bold mb-3">Ethical</h3>
-                    <p class="text-white/60 text-sm leading-relaxed">Strict adherence to professional rules of conduct.</p>
+                    <h3 class="font-bold mb-3">Meticulous</h3>
+                    <p class="text-white/60 text-sm leading-relaxed">Thorough evidence review and precise drafting.</p>
                 </div>
                 <div class="text-center">
                     <div class="bg-slate-800 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-slate-700">
-                        <i class="fa-solid fa-users text-2xl text-white"></i>
+                        <i class="fa-solid fa-gavel text-2xl text-white"></i>
                     </div>
-                    <h3 class="font-bold mb-3">Client-First</h3>
-                    <p class="text-white/60 text-sm leading-relaxed">Your best interests are always our top priority.</p>
+                    <h3 class="font-bold mb-3">Advocacy</h3>
+                    <p class="text-white/60 text-sm leading-relaxed">Strong representation before boards and courts.</p>
                 </div>
             </div>
         </div>
@@ -632,88 +684,116 @@ const contactContent = `
     <div class="bg-slate-900 py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 class="text-4xl font-bold text-white mb-4">Contact Us</h1>
-            <div class="w-24 h-1 bg-slate-900"></div>
+            <div class="w-24 h-1 bg-white/20"></div>
         </div>
     </div>
 
     <!-- Content -->
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-16">
+            <div class="flex flex-col lg:flex-row gap-16">
+                
                 <!-- Contact Info -->
-                <div>
-                    <h2 class="text-3xl font-bold text-slate-900 mb-6">Get In Touch</h2>
-                    <p class="text-slate-500 text-lg mb-10">
-                        We are here to help you navigate your legal matters. Contact us today to schedule a consultation.
+                <div class="lg:w-1/3">
+                    <h2 class="text-2xl font-bold text-slate-900 mb-6">Book Your Free Consultation Today</h2>
+                    <p class="text-slate-500 mb-10">
+                        Do not wait for your legal issues to escalate. Contact us today for a confidential assessment of your matter.
                     </p>
                     
                     <div class="space-y-8">
                         <div class="flex items-start">
-                            <div class="bg-slate-100 p-4 rounded-full mr-6">
-                                <i class="fa-solid fa-phone text-xl text-slate-900"></i>
+                            <div class="bg-slate-100 p-3 rounded-full mr-4">
+                                <i class="fa-solid fa-phone text-slate-900"></i>
                             </div>
                             <div>
-                                <h3 class="font-bold text-slate-900 text-lg mb-1">Phone</h3>
-                                <p class="text-slate-600"><a href="tel:+15551234567" class="hover:text-slate-900 transition-colors">(555) 123-4567</a></p>
+                                <h3 class="text-lg font-bold text-slate-900 mb-1">Phone</h3>
+                                <p class="text-slate-500"><a href="tel:+15551234567" class="hover:text-slate-900 transition-colors">(555) 123-4567</a></p>
+                                <p class="text-sm text-slate-500 mt-1">Mon-Fri: 9:00 AM - 5:00 PM</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="bg-slate-100 p-3 rounded-full mr-4">
+                                <i class="fa-solid fa-envelope text-slate-900"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900 mb-1">Email</h3>
+                                <p class="text-slate-500"><a href="mailto:info@patellegalservices.ca" class="hover:text-slate-900 transition-colors">info@patellegalservices.ca</a></p>
                             </div>
                         </div>
                         
                         <div class="flex items-start">
-                            <div class="bg-slate-100 p-4 rounded-full mr-6">
-                                <i class="fa-solid fa-envelope text-xl text-slate-900"></i>
+                            <div class="bg-slate-100 p-3 rounded-full mr-4">
+                                <i class="fa-solid fa-location-dot text-slate-900"></i>
                             </div>
                             <div>
-                                <h3 class="font-bold text-slate-900 text-lg mb-1">Email</h3>
-                                <p class="text-slate-600"><a href="mailto:info@patellegalservices.ca" class="hover:text-slate-900 transition-colors">info@patellegalservices.ca</a></p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="bg-slate-100 p-4 rounded-full mr-6">
-                                <i class="fa-solid fa-location-dot text-xl text-slate-900"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-slate-900 text-lg mb-1">Office</h3>
-                                <p class="text-slate-600">123 Legal Ave, Suite 400<br/>Toronto, ON M5V 2T6</p>
+                                <h3 class="text-lg font-bold text-slate-900 mb-1">Office Location</h3>
+                                <p class="text-slate-500">
+                                    123 Legal Ave, Suite 400<br />
+                                    Toronto, ON M5V 2T6
+                                </p>
+                                <p class="text-sm text-slate-500 mt-1">By appointment only.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-
+                
                 <!-- Contact Form -->
-                <div class="bg-slate-50 p-8 rounded-xl border border-slate-200 shadow-sm">
-                    <h3 class="text-2xl font-bold text-slate-900 mb-6">Send a Message</h3>
-                    <form onsubmit="event.preventDefault(); alert('Thank you for your message. We will get back to you shortly.'); this.reset();" class="space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-sm font-medium text-slate-700 mb-2">First Name</label>
-                                <input type="text" required class="w-full px-4 py-3 rounded-md border border-slate-300 focus:ring-2 focus:ring-slate-900 focus:border-slate-900 outline-none transition-all" />
+                <div class="lg:w-2/3">
+                    <div class="bg-slate-50 p-8 rounded-xl border border-slate-200">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-6">Send a Message</h3>
+                        <div id="contact-success" class="hidden bg-green-50 border border-green-200 rounded-lg p-6 text-center">
+                            <i class="fa-solid fa-circle-check text-5xl text-green-500 mb-4"></i>
+                            <h4 class="text-xl font-bold text-slate-900 mb-2">Thank you for reaching out!</h4>
+                            <p class="text-slate-500 mb-6">Your message has been successfully sent. We will get back to you within 24 hours.</p>
+                            <button onclick="resetForm()" class="bg-slate-900 hover:bg-slate-800 text-white px-6 py-2 rounded-md font-medium transition-colors">
+                                Send Another Message
+                            </button>
+                        </div>
+                        <form id="contact-form" class="space-y-6" onsubmit="handleContactSubmit(event)">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-slate-900 mb-2">Full Name</label>
+                                    <input type="text" id="name" required class="w-full px-4 py-3 rounded-md border border-slate-200 focus:ring-2 focus:ring-slate-900 focus:border-slate-900 outline-none transition-all" placeholder="John Doe">
+                                </div>
+                                <div>
+                                    <label for="phone" class="block text-sm font-medium text-slate-900 mb-2">Phone Number</label>
+                                    <input type="tel" id="phone" required class="w-full px-4 py-3 rounded-md border border-slate-200 focus:ring-2 focus:ring-slate-900 focus:border-slate-900 outline-none transition-all" placeholder="(555) 123-4567">
+                                </div>
                             </div>
                             <div>
-                                <label class="block text-sm font-medium text-slate-700 mb-2">Last Name</label>
-                                <input type="text" required class="w-full px-4 py-3 rounded-md border border-slate-300 focus:ring-2 focus:ring-slate-900 focus:border-slate-900 outline-none transition-all" />
+                                <label for="email" class="block text-sm font-medium text-slate-900 mb-2">Email Address</label>
+                                <input type="email" id="email" required class="w-full px-4 py-3 rounded-md border border-slate-200 focus:ring-2 focus:ring-slate-900 focus:border-slate-900 outline-none transition-all" placeholder="john@example.com">
                             </div>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-2">Email Address</label>
-                            <input type="email" required class="w-full px-4 py-3 rounded-md border border-slate-300 focus:ring-2 focus:ring-slate-900 focus:border-slate-900 outline-none transition-all" />
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-2">Phone Number</label>
-                            <input type="tel" class="w-full px-4 py-3 rounded-md border border-slate-300 focus:ring-2 focus:ring-slate-900 focus:border-slate-900 outline-none transition-all" />
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-2">Message</label>
-                            <textarea rows="4" required class="w-full px-4 py-3 rounded-md border border-slate-300 focus:ring-2 focus:ring-slate-900 focus:border-slate-900 outline-none transition-all"></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-4 rounded-md transition-colors">
-                            Send Message
-                        </button>
-                    </form>
+                            <div>
+                                <label for="issue" class="block text-sm font-medium text-slate-900 mb-2">Description of Legal Issue</label>
+                                <textarea id="issue" rows="5" required class="w-full px-4 py-3 rounded-md border border-slate-200 focus:ring-2 focus:ring-slate-900 focus:border-slate-900 outline-none transition-all resize-none" placeholder="Please briefly describe your situation..."></textarea>
+                            </div>
+                            <div class="text-sm text-slate-500">
+                                <p>Please note: Submitting this form does not create a paralegal-client relationship. Please do not include confidential information in this form.</p>
+                            </div>
+                            <button type="submit" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-4 rounded-md transition-colors">
+                                Submit Inquiry
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <script>
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            document.getElementById('contact-form').classList.add('hidden');
+            document.getElementById('contact-success').classList.remove('hidden');
+        }
+        function resetForm() {
+            document.getElementById('contact-form').reset();
+            document.getElementById('contact-form').classList.remove('hidden');
+            document.getElementById('contact-success').classList.add('hidden');
+        }
+    </script>
 `;
 
 fs.writeFileSync(path.join(__dirname, 'docs', 'index.html'), header('home') + homeContent + footer);
