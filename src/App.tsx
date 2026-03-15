@@ -240,39 +240,35 @@ function HomePage({ navigate }: { navigate: (page: string) => void }) {
 
 
       {/* Services Summary */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">Our Practice Areas</h2>
-            <div className="w-24 h-1 bg-slate-900 mx-auto"></div>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight">Our Practice Areas</h2>
+            <div className="w-24 h-1.5 bg-[#0f172a] mx-auto rounded-full"></div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="group bg-white rounded-xl overflow-hidden shadow-sm border border-slate-200 flex flex-col h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-              <div className="h-48 overflow-hidden relative">
+          <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+            {/* Service 1 */}
+            <div className="group bg-white rounded-[3rem] overflow-hidden shadow-sm border border-slate-100 flex flex-col h-full transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
+              <div className="h-72 overflow-hidden relative">
                 <img 
                   src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800" 
-                  alt="Property" 
-                  className="w-full h-full object-cover"
+                  alt="Landlord and Tenant Board" 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
-                <h3 className="absolute bottom-4 left-6 text-2xl font-bold text-white flex items-center">
-                  <Building className="mr-3 h-6 w-6 text-slate-900" />
-                  Landlord & Tenant Board
-                </h3>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent"></div>
+                <div className="absolute bottom-8 left-8">
+                  <div className="w-14 h-14 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl flex items-center justify-center text-white mb-4">
+                    <Building className="h-7 w-7" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white">Landlord & Tenant Board</h3>
+                </div>
               </div>
-              <div className="p-8 flex-grow flex flex-col">
-                <p className="text-slate-500 mb-6 flex-grow">
-                  The Residential Tenancies Act is complex. Our firm provides knowledgeable legal guidance and representation to both landlords and tenants in all matters before the Landlord and Tenant Board.
+              <div className="p-10 flex-grow flex flex-col">
+                <p className="text-slate-500 mb-10 flex-grow leading-relaxed text-lg">
+                  Expert guidance for both landlords and tenants in all matters before the Landlord and Tenant Board.
                 </p>
-                <ul className="space-y-2 mb-8">
-                  <li className="flex items-center text-sm text-slate-900"><CheckCircle2 className="h-4 w-4 text-slate-900 mr-2" /> Eviction Applications</li>
-                  <li className="flex items-center text-sm text-slate-900"><CheckCircle2 className="h-4 w-4 text-slate-900 mr-2" /> Rent Arrears & Non-Payment Disputes</li>
-                  <li className="flex items-center text-sm text-slate-900"><CheckCircle2 className="h-4 w-4 text-slate-900 mr-2" /> Tenant Rights Violations</li>
-                  <li className="flex items-center text-sm text-slate-900"><CheckCircle2 className="h-4 w-4 text-slate-900 mr-2" /> Maintenance and Repair Disputes</li>
-                  <li className="flex items-center text-sm text-slate-900"><CheckCircle2 className="h-4 w-4 text-slate-900 mr-2" /> Wrongful Evictions</li>
-                </ul>
                 <button 
                   onClick={() => {
                     navigate('services');
@@ -281,38 +277,34 @@ function HomePage({ navigate }: { navigate: (page: string) => void }) {
                       window.dispatchEvent(event);
                     }, 100);
                   }}
-                  className="w-full py-3 border border-slate-200 rounded-md text-slate-900 font-medium group-hover:bg-slate-900 group-hover:text-white hover:!bg-slate-800 transition-colors"
+                  className="w-full bg-[#0f172a] text-white py-5 rounded-2xl font-bold transition-all hover:bg-slate-800 flex items-center justify-center shadow-lg shadow-slate-200"
                 >
-                  Learn More
+                  View Full Details <ChevronRight className="ml-2 h-4 w-4" />
                 </button>
               </div>
             </div>
 
-            <div className="group bg-white rounded-xl overflow-hidden shadow-sm border border-slate-200 flex flex-col h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-              <div className="h-48 overflow-hidden relative">
+            {/* Service 2 */}
+            <div className="group bg-white rounded-[3rem] overflow-hidden shadow-sm border border-slate-100 flex flex-col h-full transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
+              <div className="h-72 overflow-hidden relative">
                 <img 
                   src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800" 
-                  alt="Contract" 
-                  className="w-full h-full object-cover"
+                  alt="Small Claims Court" 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
-                <h3 className="absolute bottom-4 left-6 text-2xl font-bold text-white flex items-center">
-                  <FileText className="mr-3 h-6 w-6 text-slate-900" />
-                  Small Claims Court Matters
-                </h3>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent"></div>
+                <div className="absolute bottom-8 left-8">
+                  <div className="w-14 h-14 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl flex items-center justify-center text-white mb-4">
+                    <FileText className="h-7 w-7" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white">Small Claims Court</h3>
+                </div>
               </div>
-              <div className="p-8 flex-grow flex flex-col">
-                <p className="text-slate-500 mb-6 flex-grow">
-                  Our firm provides legal guidance and representation for matters before the Small Claims Court for claims up to $50,000. Whether you are starting a claim or defending one, we work closely with you to develop a strategy that protects your interests and pursue the best possible outcome.
+              <div className="p-10 flex-grow flex flex-col">
+                <p className="text-slate-500 mb-10 flex-grow leading-relaxed text-lg">
+                  Legal representation for claims up to $50,000, including contract disputes and debt recovery.
                 </p>
-                <ul className="space-y-2 mb-8">
-                  <li className="flex items-center text-sm text-slate-900"><CheckCircle2 className="h-4 w-4 text-slate-900 mr-2" /> Breach of Contract</li>
-                  <li className="flex items-center text-sm text-slate-900"><CheckCircle2 className="h-4 w-4 text-slate-900 mr-2" /> Debt Recovery</li>
-                  <li className="flex items-center text-sm text-slate-900"><CheckCircle2 className="h-4 w-4 text-slate-900 mr-2" /> Property Damage</li>
-                  <li className="flex items-center text-sm text-slate-900"><CheckCircle2 className="h-4 w-4 text-slate-900 mr-2" /> Personal Property</li>
-                  <li className="flex items-center text-sm text-slate-900"><CheckCircle2 className="h-4 w-4 text-slate-900 mr-2" /> Consumer Disputes</li>
-                </ul>
                 <button 
                   onClick={() => {
                     navigate('services');
@@ -321,38 +313,34 @@ function HomePage({ navigate }: { navigate: (page: string) => void }) {
                       window.dispatchEvent(event);
                     }, 100);
                   }}
-                  className="w-full py-3 border border-slate-200 rounded-md text-slate-900 font-medium group-hover:bg-slate-900 group-hover:text-white hover:!bg-slate-800 transition-colors"
+                  className="w-full bg-[#0f172a] text-white py-5 rounded-2xl font-bold transition-all hover:bg-slate-800 flex items-center justify-center shadow-lg shadow-slate-200"
                 >
-                  Learn More
+                  View Full Details <ChevronRight className="ml-2 h-4 w-4" />
                 </button>
               </div>
             </div>
 
-            <div className="group bg-white rounded-xl overflow-hidden shadow-sm border border-slate-200 flex flex-col h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-              <div className="h-48 overflow-hidden relative">
+            {/* Service 3 */}
+            <div className="group bg-white rounded-[3rem] overflow-hidden shadow-sm border border-slate-100 flex flex-col h-full transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
+              <div className="h-72 overflow-hidden relative">
                 <img 
                   src="https://images.unsplash.com/photo-1618044733300-9472054094ee?auto=format&fit=crop&q=80&w=800" 
-                  alt="Notary" 
-                  className="w-full h-full object-cover"
+                  alt="Notary Services" 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
-                <h3 className="absolute bottom-4 left-6 text-2xl font-bold text-white flex items-center">
-                  <ShieldCheck className="mr-3 h-6 w-6 text-slate-900" />
-                  Notary Services
-                </h3>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent"></div>
+                <div className="absolute bottom-8 left-8">
+                  <div className="w-14 h-14 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl flex items-center justify-center text-white mb-4">
+                    <ShieldCheck className="h-7 w-7" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white">Notary Services</h3>
+                </div>
               </div>
-              <div className="p-8 flex-grow flex flex-col">
-                <p className="text-slate-500 mb-6 flex-grow">
-                  Our firm provides reliable and efficient notary services to individuals and businesses. As a Notary Public, we are authorized to verify identities, witness signatures, and certify documents to ensure they are legally recognized.
+              <div className="p-10 flex-grow flex flex-col">
+                <p className="text-slate-500 mb-10 flex-grow leading-relaxed text-lg">
+                  Reliable notary services including affidavits, certified copies, and document authentication.
                 </p>
-                <ul className="space-y-2 mb-8">
-                  <li className="flex items-center text-sm text-slate-900"><CheckCircle2 className="h-4 w-4 text-slate-900 mr-2" /> Affidavits and Statutory Declarations</li>
-                  <li className="flex items-center text-sm text-slate-900"><CheckCircle2 className="h-4 w-4 text-slate-900 mr-2" /> Certify True Copies of Documents</li>
-                  <li className="flex items-center text-sm text-slate-900"><CheckCircle2 className="h-4 w-4 text-slate-900 mr-2" /> Consent Letters</li>
-                  <li className="flex items-center text-sm text-slate-900"><CheckCircle2 className="h-4 w-4 text-slate-900 mr-2" /> Power of Attorney</li>
-                  <li className="flex items-center text-sm text-slate-900"><CheckCircle2 className="h-4 w-4 text-slate-900 mr-2" /> Real Estate and Financial Documents</li>
-                </ul>
                 <button 
                   onClick={() => {
                     navigate('services');
@@ -361,9 +349,9 @@ function HomePage({ navigate }: { navigate: (page: string) => void }) {
                       window.dispatchEvent(event);
                     }, 100);
                   }}
-                  className="w-full py-3 border border-slate-200 rounded-md text-slate-900 font-medium group-hover:bg-slate-900 group-hover:text-white hover:!bg-slate-800 transition-colors"
+                  className="w-full bg-[#0f172a] text-white py-5 rounded-2xl font-bold transition-all hover:bg-slate-800 flex items-center justify-center shadow-lg shadow-slate-200"
                 >
-                  Learn More
+                  View Full Details <ChevronRight className="ml-2 h-4 w-4" />
                 </button>
               </div>
             </div>
