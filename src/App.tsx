@@ -499,21 +499,18 @@ function ServicesPage({ navigate }: { navigate: (page: string) => void }) {
       title: 'Landlord and Tenant Board',
       icon: <Building className="h-12 w-12" />,
       description: 'Expert guidance for both landlords and tenants in all matters before the Landlord and Tenant Board.',
-      color: 'bg-slate-50'
     },
     {
       id: 'small-claims',
       title: 'Small Claims Court Matters',
       icon: <FileText className="h-12 w-12" />,
       description: 'Legal representation for claims up to $50,000, including contract disputes and debt recovery.',
-      color: 'bg-slate-50'
     },
     {
       id: 'notary',
       title: 'Notary Services',
       icon: <ShieldCheck className="h-12 w-12" />,
       description: 'Reliable notary services including affidavits, certified copies, and document authentication.',
-      color: 'bg-slate-50'
     }
   ];
 
@@ -529,36 +526,36 @@ function ServicesPage({ navigate }: { navigate: (page: string) => void }) {
             transition={{ duration: 0.3 }}
           >
             {/* Page Header */}
-            <div className="bg-slate-900 py-20">
+            <div className="bg-[#0f172a] py-24">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Our Legal Services</h1>
-                <p className="text-xl text-white/70 max-w-2xl mx-auto">
+                <h1 className="text-5xl md:text-6xl font-bold text-white mb-8">Our Legal Services</h1>
+                <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
                   Professional, affordable, and effective legal representation tailored to your specific needs in Ontario.
                 </p>
               </div>
             </div>
 
             {/* Service Cards Grid */}
-            <section className="py-20">
+            <section className="py-24 bg-slate-50">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid md:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-3 gap-10">
                   {services.map((service) => (
                     <motion.div
                       key={service.id}
                       whileHover={{ y: -5 }}
-                      className={`group ${service.color} p-10 rounded-2xl shadow-sm border border-slate-200 flex flex-col h-full hover:bg-white transition-all duration-300`}
+                      className="bg-white p-12 rounded-[2.5rem] shadow-sm border border-slate-100 flex flex-col h-full transition-all duration-300 hover:shadow-xl"
                     >
-                      <div className="text-slate-900 mb-6">{service.icon}</div>
-                      <h2 className="text-2xl font-bold text-slate-900 mb-4">{service.title}</h2>
-                      <p className="text-slate-600 mb-8 flex-grow leading-relaxed">
+                      <div className="text-slate-900 mb-8">{service.icon}</div>
+                      <h2 className="text-2xl font-bold text-slate-900 mb-6">{service.title}</h2>
+                      <p className="text-slate-500 mb-10 flex-grow leading-relaxed text-lg">
                         {service.description}
                       </p>
                       <button
                         onClick={() => setActiveService(service.id)}
-                        className="w-full bg-slate-900 group-hover:bg-slate-800 hover:!bg-slate-700 text-white py-4 rounded-xl font-bold transition-all flex items-center justify-center"
+                        className="w-full bg-[#0f172a] text-white py-4 rounded-xl font-bold transition-all hover:bg-slate-800 flex items-center justify-center"
                       >
                         View Full Details
-                        <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                        <ChevronRight className="ml-2 h-4 w-4" />
                       </button>
                     </motion.div>
                   ))}

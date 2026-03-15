@@ -53,81 +53,51 @@
     <main class="flex-grow">
 
     <!-- Page Header -->
-    <div id="services-header" class="bg-slate-900 py-20">
+    <div id="services-header" class="bg-[#0f172a] py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Our Legal Services</h1>
-            <p class="text-xl text-white/70 max-w-2xl mx-auto">Professional, affordable, and effective legal representation tailored to your specific needs in Ontario.</p>
+            <h1 class="text-5xl md:text-6xl font-bold text-white mb-8">Our Legal Services</h1>
+            <p class="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">Professional, affordable, and effective legal representation tailored to your specific needs in Ontario.</p>
         </div>
     </div>
 
     <!-- Service Cards Grid -->
-    <section id="services-overview" class="py-20">
+    <section id="services-overview" class="py-24 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-3 gap-10">
                 <!-- LTB Card -->
-                <div class="group bg-white rounded-xl overflow-hidden shadow-sm border border-slate-200 flex flex-col h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800" alt="Property" class="w-full h-full object-cover" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
-                        <h3 class="absolute bottom-4 left-6 text-2xl font-bold text-white flex items-center">
-                            <i class="fa-solid fa-building mr-3 text-xl"></i> Landlord & Tenant Board
-                        </h3>
+                <div class="bg-white p-12 rounded-[2.5rem] shadow-sm border border-slate-100 flex flex-col h-full transition-all duration-300 hover:shadow-xl">
+                    <div class="text-slate-900 mb-8">
+                        <i class="fa-solid fa-building text-5xl"></i>
                     </div>
-                    <div class="p-8 flex-grow flex flex-col">
-                        <p class="text-slate-500 mb-6 flex-grow">The Residential Tenancies Act is complex. Our firm provides knowledgeable legal guidance and representation to both landlords and tenants in all matters before the Landlord and Tenant Board.</p>
-                        <ul class="space-y-2 mb-8">
-                            <li class="flex items-center text-sm text-slate-900"><i class="fa-solid fa-circle-check text-slate-900 mr-2"></i> Eviction Applications</li>
-                            <li class="flex items-center text-sm text-slate-900"><i class="fa-solid fa-circle-check text-slate-900 mr-2"></i> Rent Arrears & Non-Payment Disputes</li>
-                            <li class="flex items-center text-sm text-slate-900"><i class="fa-solid fa-circle-check text-slate-900 mr-2"></i> Tenant Rights Violations</li>
-                            <li class="flex items-center text-sm text-slate-900"><i class="fa-solid fa-circle-check text-slate-900 mr-2"></i> Maintenance and Repair Disputes</li>
-                            <li class="flex items-center text-sm text-slate-900"><i class="fa-solid fa-circle-check text-slate-900 mr-2"></i> Wrongful Evictions</li>
-                        </ul>
-                        <button onclick="showService('ltb')" class="w-full py-3 border border-slate-200 rounded-md text-slate-900 font-medium group-hover:bg-slate-900 group-hover:text-white transition-colors">View Full Details</button>
-                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-6">Landlord and Tenant Board</h3>
+                    <p class="text-slate-500 mb-10 flex-grow leading-relaxed text-lg">Expert guidance for both landlords and tenants in all matters before the Landlord and Tenant Board.</p>
+                    <button onclick="showService('ltb')" class="w-full bg-[#0f172a] text-white py-4 rounded-xl font-bold transition-all hover:bg-slate-800 flex items-center justify-center">
+                        View Full Details <i class="fa-solid fa-chevron-right ml-2 text-xs"></i>
+                    </button>
                 </div>
 
                 <!-- Small Claims Card -->
-                <div class="group bg-white rounded-xl overflow-hidden shadow-sm border border-slate-200 flex flex-col h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800" alt="Contract" class="w-full h-full object-cover" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
-                        <h3 class="absolute bottom-4 left-6 text-2xl font-bold text-white flex items-center">
-                            <i class="fa-solid fa-file-lines mr-3 text-xl"></i> Small Claims Court
-                        </h3>
+                <div class="bg-white p-12 rounded-[2.5rem] shadow-sm border border-slate-100 flex flex-col h-full transition-all duration-300 hover:shadow-xl">
+                    <div class="text-slate-900 mb-8">
+                        <i class="fa-solid fa-file-lines text-5xl"></i>
                     </div>
-                    <div class="p-8 flex-grow flex flex-col">
-                        <p class="text-slate-500 mb-6 flex-grow">Our firm provides legal guidance and representation for matters before the Small Claims Court for claims up to $50,000. Whether you are starting a claim or defending one, we work closely with you to develop a strategy that protects your interests and pursue the best possible outcome.</p>
-                        <ul class="space-y-2 mb-8">
-                            <li class="flex items-center text-sm text-slate-900"><i class="fa-solid fa-circle-check text-slate-900 mr-2"></i> Breach of Contract</li>
-                            <li class="flex items-center text-sm text-slate-900"><i class="fa-solid fa-circle-check text-slate-900 mr-2"></i> Debt Recovery</li>
-                            <li class="flex items-center text-sm text-slate-900"><i class="fa-solid fa-circle-check text-slate-900 mr-2"></i> Property Damage</li>
-                            <li class="flex items-center text-sm text-slate-900"><i class="fa-solid fa-circle-check text-slate-900 mr-2"></i> Personal Property</li>
-                            <li class="flex items-center text-sm text-slate-900"><i class="fa-solid fa-circle-check text-slate-900 mr-2"></i> Consumer Disputes</li>
-                        </ul>
-                        <button onclick="showService('small-claims')" class="w-full py-3 border border-slate-200 rounded-md text-slate-900 font-medium group-hover:bg-slate-900 group-hover:text-white transition-colors">View Full Details</button>
-                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-6">Small Claims Court Matters</h3>
+                    <p class="text-slate-500 mb-10 flex-grow leading-relaxed text-lg">Legal representation for claims up to $50,000, including contract disputes and debt recovery.</p>
+                    <button onclick="showService('small-claims')" class="w-full bg-[#0f172a] text-white py-4 rounded-xl font-bold transition-all hover:bg-slate-800 flex items-center justify-center">
+                        View Full Details <i class="fa-solid fa-chevron-right ml-2 text-xs"></i>
+                    </button>
                 </div>
 
                 <!-- Notary Card -->
-                <div class="group bg-white rounded-xl overflow-hidden shadow-sm border border-slate-200 flex flex-col h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1618044733300-9472054094ee?auto=format&fit=crop&q=80&w=800" alt="Notary" class="w-full h-full object-cover" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
-                        <h3 class="absolute bottom-4 left-6 text-2xl font-bold text-white flex items-center">
-                            <i class="fa-solid fa-shield-halved mr-3 text-xl"></i> Notary Services
-                        </h3>
+                <div class="bg-white p-12 rounded-[2.5rem] shadow-sm border border-slate-100 flex flex-col h-full transition-all duration-300 hover:shadow-xl">
+                    <div class="text-slate-900 mb-8">
+                        <i class="fa-solid fa-shield-halved text-5xl"></i>
                     </div>
-                    <div class="p-8 flex-grow flex flex-col">
-                        <p class="text-slate-500 mb-6 flex-grow">Our firm provides reliable and efficient notary services to individuals and businesses. As a Notary Public, we are authorized to verify identities, witness signatures, and certify documents to ensure they are legally recognized.</p>
-                        <ul class="space-y-2 mb-8">
-                            <li class="flex items-center text-sm text-slate-900"><i class="fa-solid fa-circle-check text-slate-900 mr-2"></i> Affidavits and Statutory Declarations</li>
-                            <li class="flex items-center text-sm text-slate-900"><i class="fa-solid fa-circle-check text-slate-900 mr-2"></i> Certify True Copies of Documents</li>
-                            <li class="flex items-center text-sm text-slate-900"><i class="fa-solid fa-circle-check text-slate-900 mr-2"></i> Consent Letters</li>
-                            <li class="flex items-center text-sm text-slate-900"><i class="fa-solid fa-circle-check text-slate-900 mr-2"></i> Power of Attorney</li>
-                            <li class="flex items-center text-sm text-slate-900"><i class="fa-solid fa-circle-check text-slate-900 mr-2"></i> Real Estate and Financial Documents</li>
-                        </ul>
-                        <button onclick="showService('notary')" class="w-full py-3 border border-slate-200 rounded-md text-slate-900 font-medium group-hover:bg-slate-900 group-hover:text-white transition-colors">View Full Details</button>
-                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-6">Notary Services</h3>
+                    <p class="text-slate-500 mb-10 flex-grow leading-relaxed text-lg">Reliable notary services including affidavits, certified copies, and document authentication.</p>
+                    <button onclick="showService('notary')" class="w-full bg-[#0f172a] text-white py-4 rounded-xl font-bold transition-all hover:bg-slate-800 flex items-center justify-center">
+                        View Full Details <i class="fa-solid fa-chevron-right ml-2 text-xs"></i>
+                    </button>
                 </div>
             </div>
         </div>
